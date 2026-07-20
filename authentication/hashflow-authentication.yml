@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+docs: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    The Hashflow Taker API v3 authenticates with a provider-issued credential
+    key passed in the HTTP Authorization header. Access is granted per source
+    identifier; aggregators supply their own `source`, while single-wallet
+    integrators use `source: "api"` plus a `wallet` parameter. Trade settlement
+    on-chain is authorized separately by EIP-712 market-maker signatures returned
+    on each quote (verified by the HashflowRouter contract), not by the API key.
+schemes:
+  - name: ApiKeyAuth
+    type: apiKey
+    in: header
+    parameter_name: Authorization
+    description: Provider-issued credential key sent on every Taker API v3 request.
+    sources: [docs.hashflow.com/hashflow/taker/getting-started-api-v3]
