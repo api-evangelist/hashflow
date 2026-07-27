@@ -1,8 +1,15 @@
 aid: hashflow
 name: Hashflow
-description: 'Hashflow is a company surfaced as a portfolio company of electric-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Hashflow is a decentralized exchange (DEX) and the leading request-for-quote
+  (RFQ) trading platform in crypto. Instead of an automated market maker (AMM)
+  pricing curve, Hashflow brokers signed, off-chain-priced quotes from a network
+  of professional market makers, giving traders zero-slippage, MEV-protected swaps
+  across EVM chains and Solana, including cross-chain trades. Market makers publish
+  price levels and respond to RFQs with EIP-712 signed quotes that settle on-chain
+  via the HashflowRouter contract. Developers integrate through the Taker API v3
+  (market-makers, price-levels, rfq, and restrictions endpoints) and market-maker
+  tooling, with first-party JavaScript and Python SDKs.
 url: https://raw.githubusercontent.com/api-evangelist/hashflow/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +17,61 @@ x-backed-by:
 - electric-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://www.hashflow.com/logo.png
 tags:
 - Company
 - Defi
-apis: []
+- DEX
+- RFQ
+- Trading
+- Crypto
+- Market Making
+- Cross-Chain
+- Blockchain
+- Web3
+apis:
+- name: Hashflow Taker API v3
+  description: >-
+    REST API for takers/aggregators: discover market makers, query indicative
+    price levels, request signed executable RFQ quotes, and check trader
+    rate-limit restrictions. Quotes settle on-chain via HashflowRouter.
+  humanURL: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+  baseURL: https://api.hashflow.com/taker/v3
+  properties:
+  - type: Documentation
+    url: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+  - type: APIReference
+    url: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+  - type: GettingStarted
+    url: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+  - type: Authentication
+    url: authentication/hashflow-authentication.yml
+- name: Hashflow Market Maker API v3
+  description: >-
+    REST API for market makers: publish price levels, receive RFQs, sign quotes,
+    and manage restrictions on the Hashflow exchange.
+  humanURL: https://docs.hashflow.com/hashflow/market-making/getting-started-api-v3
+  baseURL: https://api.hashflow.com/maker/v3
+  properties:
+  - type: Documentation
+    url: https://docs.hashflow.com/hashflow/market-making/getting-started-api-v3
+  - type: GettingStarted
+    url: https://docs.hashflow.com/hashflow/market-making/how-to-guides
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +80,54 @@ maintainers:
 common:
 - type: Website
   url: https://www.hashflow.com/
+- type: DeveloperPortal
+  url: https://docs.hashflow.com/
+- type: Documentation
+  url: https://docs.hashflow.com/hashflow
+- type: APIReference
+  url: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+- type: GettingStarted
+  url: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+- type: Blog
+  url: https://blog.hashflow.com/
+- type: GitHubOrganization
+  url: https://github.com/hashflownetwork
+- type: SignUp
+  url: https://app.hashflow.com/
+- type: Support
+  url: https://hashflow.com/discord
+- type: Pricing
+  url: https://docs.hashflow.com/hashflow/hashflow/protocol-fees-and-revenue-share
+- type: LLMsTxt
+  url: llms/hashflow-llms.txt
+- type: Packages
+  url: packages/hashflow-packages.yml
+- type: SDKs
+  url: packages/hashflow-packages.yml
+- type: Authentication
+  url: authentication/hashflow-authentication.yml
+- type: Conventions
+  url: conventions/hashflow-conventions.yml
+- type: ErrorCatalog
+  url: errors/hashflow-error-codes.yml
+- type: DataModel
+  url: data-model/hashflow-data-model.yml
+- type: Lifecycle
+  url: lifecycle/hashflow-lifecycle.yml
+- type: Conformance
+  url: conformance/hashflow-conformance.yml
+- type: MCPServer
+  url: mcp/hashflow-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/hashflow-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/hashflow-vulnerability-disclosure.yml
+- type: Security
+  url: https://immunefi.com/bounty/hashflow/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

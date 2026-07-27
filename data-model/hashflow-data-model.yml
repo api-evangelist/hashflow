@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: derived
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+entities:
+  - name: MarketMaker
+    description: A professional liquidity provider that publishes price levels and signs quotes.
+    key: marketMaker (name string)
+  - name: PriceLevel
+    description: An indicative quantity/price tier (q, p) published per pair per market maker.
+    fields: [q, p]
+  - name: Pair
+    description: A tradable token pair on a chain.
+    fields: [baseToken, quoteToken, baseTokenName, quoteTokenName]
+  - name: RFQ
+    description: A request-for-quote from a taker across one or more market makers.
+    fields: [rfqId, source, baseChain, quoteChain, trader, effectiveTrader, marketMakers, feesBps]
+  - name: Quote
+    description: A signed, executable quote returned for an RFQ.
+    fields: [quoteData, signature, quoteExpiry, nonce, pool, txid, calldata, targetContract]
+  - name: Restriction
+    description: A trader-level rate-limit restriction record.
+    fields: [reason, expiryTimestampMs, marketMaker, chainId, chainType]
+relationships:
+  - from: RFQ
+    to: MarketMaker
+    type: has_many
+    via: marketMakers
+  - from: RFQ
+    to: Quote
+    type: has_many
+    via: quotes
+  - from: PriceLevel
+    to: Pair
+    type: belongs_to
+    via: pair
+  - from: PriceLevel
+    to: MarketMaker
+    type: belongs_to
+    via: marketMaker
+  - from: Quote
+    to: RFQ
+    type: belongs_to
+    via: rfqId
+  - from: Restriction
+    to: MarketMaker
+    type: belongs_to
+    via: marketMaker

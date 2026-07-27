@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: npm registry, PyPI, github.com/hashflownetwork
+packages:
+  - language: javascript
+    registry: npm
+    name: "@hashflow/taker-js"
+    url: https://www.npmjs.com/package/@hashflow/taker-js
+    version: 0.4.1
+    description: JavaScript library to facilitate interactions with the Hashflow backend and smart contracts for takers.
+    install: npm install @hashflow/taker-js
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@hashflow/sdk"
+    url: https://www.npmjs.com/package/@hashflow/sdk
+    version: 2.3.8
+    description: JavaScript SDK to interact with Hashflow smart contracts.
+    install: npm install @hashflow/sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@hashflow/contracts-evm"
+    url: https://www.npmjs.com/package/@hashflow/contracts-evm
+    version: 2.0.17
+    description: EVM smart contracts (Solidity) for Hashflow.
+    install: npm install @hashflow/contracts-evm
+    official: true
+  - language: python
+    registry: pypi
+    name: hashflow-sdk
+    url: https://pypi.org/project/hashflow-sdk/
+    version: 0.3.0
+    description: Python SDK to interact with Hashflow smart contracts.
+    install: pip install hashflow-sdk
+    official: true
+  - language: python
+    registry: github
+    name: taker-py
+    url: https://github.com/hashflownetwork/taker-py
+    description: First-party Python implementation of the Hashflow REST (taker) API (package name "hashflow"); published on GitHub, not on PyPI.
+    install: pip install git+https://github.com/hashflownetwork/taker-py
+    official: true

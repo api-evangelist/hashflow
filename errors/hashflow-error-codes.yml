@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: derived
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+format: status-envelope
+envelope:
+  status_field: status
+  status_values: ["success", "fail"]
+  error_field: error
+  notes: >-
+    The Taker API v3 does not use RFC 9457 problem+json. Every response carries a
+    top-level `status` of "success" or "fail"; on failure a human-readable `error`
+    string is included. Trader restrictions are reported structurally by the
+    /restrictions endpoint rather than as an error response.
+errors:
+  - id: rfq_fail
+    envelope_status: fail
+    surface: POST /rfq
+    meaning: The RFQ could not be filled by any targeted market maker.
+    field: error
+    remediation: >-
+      Inspect the `error` string; widen `marketMakers` / clear
+      `excludeMarketMakers`, or leave `options.doNotRetryWithOtherMakers` false so
+      Hashflow can fall back to other makers.
+  - id: price_levels_fail
+    envelope_status: fail
+    surface: GET /price-levels
+    meaning: Price discovery failed for the requested pair/chain.
+    field: error
+    remediation: Verify baseToken/quoteToken addresses, chain ids, and market maker list.
+  - id: trader_restricted
+    envelope_status: n/a
+    surface: GET /restrictions
+    meaning: >-
+      Trader is rate-limited. Returned as isTraderRestricted=true with a
+      restrictions[] entry (reason: rate_limit) and optional expiryTimestampMs.
+    field: restrictions[].reason
+    masked: false
+    remediation: Wait until expiryTimestampMs (UTC ms) before retrying quotes for that trader.

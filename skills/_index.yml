@@ -1,0 +1,8 @@
+generated: '2026-07-19'
+method: generated
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+skills:
+  - file: hashflow-quote-and-swap.md
+    name: Get an RFQ quote and execute a swap on Hashflow
+    api: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+    operations: ["GET /market-makers", "GET /price-levels", "POST /rfq", "GET /restrictions"]

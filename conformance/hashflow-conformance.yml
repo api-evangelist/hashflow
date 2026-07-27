@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: derived
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+standards:
+  - id: rest-json
+    conforms: true
+    evidence: JSON request/response over HTTPS with GET/POST verbs.
+  - id: apikey-auth
+    conforms: true
+    evidence: Authorization header credential key (authentication/hashflow-authentication.yml).
+  - id: oauth2
+    conforms: false
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Uses a status/error envelope, not application/problem+json.
+  - id: eip712-signed-quotes
+    conforms: true
+    evidence: Quotes carry EIP-712 signatures verified on-chain by HashflowRouter.
+  - id: uri-path-versioning
+    conforms: true
+    evidence: /taker/v3 and /maker/v3 path-versioned surfaces.

@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+versioning:
+  scheme: uri-path
+  current: v3
+  docs: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+  notes: >-
+    Both the taker and market-maker APIs are versioned in the URI path
+    (api.hashflow.com/taker/v3, api.hashflow.com/maker/v3). Prior generations
+    (v1/v2) existed; v3 is the current documented surface.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

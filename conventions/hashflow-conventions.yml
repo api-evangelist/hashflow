@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
+api: Hashflow Taker API v3
+base_url: https://api.hashflow.com/taker/v3
+authentication:
+  style: api-key-header
+  header: Authorization
+  ref: authentication/hashflow-authentication.yml
+source_identifier:
+  description: >-
+    Every request carries a `source` string identifying the integrator.
+    Aggregators/multi-wallet integrators pass their assigned source; single-wallet
+    integrators use `source: "api"` and add a `wallet` parameter.
+  required: true
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header is documented. Quotes are naturally single-use:
+    each RFQ returns a signed quote with a `nonce` and `quoteExpiry`, and the
+    on-chain HashflowRouter rejects reused nonces, providing replay protection at
+    settlement rather than API idempotency.
+pagination:
+  style: none
+  notes: >-
+    Price-level and RFQ responses return full arrays keyed by market maker; there
+    is no cursor/offset pagination.
+versioning:
+  scheme: uri-path
+  current: v3
+  example: https://api.hashflow.com/taker/v3
+error_envelope:
+  style: status-field
+  fields:
+    status: '"success" | "fail"'
+    error: Human-readable error string, present when status is "fail".
+  ref: errors/hashflow-error-codes.yml
+rate_limiting:
+  signal: restrictions-endpoint
+  notes: >-
+    Trader-level rate limiting is surfaced via GET /restrictions, which returns
+    `isTraderRestricted` and a `restrictions[]` list (reason: rate_limit) with an
+    optional `expiryTimestampMs`. No standard rate-limit response headers are documented.
+chains:
+  identification: >-
+    Requests specify chain by `baseChainType`/`quoteChainType` ("evm" | "solana")
+    and numeric `baseChainId`/`quoteChainId`; native tokens use the zero address
+    0x0000000000000000000000000000000000000000.
