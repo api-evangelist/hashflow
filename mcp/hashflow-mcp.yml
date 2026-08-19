@@ -2,22 +2,27 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: https://docs.hashflow.com/hashflow/taker/getting-started-api-v3
-note: >-
-  No official hosted/remote Hashflow MCP server was found. This is a candidate
-  tool list derived from the documented Taker API v3 REST surface.
+note: No official hosted/remote Hashflow MCP server was found. This is a candidate tool list derived from
+  the documented Taker API v3 REST surface.
 server:
   name: hashflow
   transport: http
 tools:
-  - name: list_market_makers
-    description: List available market makers (liquidity providers) for a chain.
-    source_operation: "GET https://api.hashflow.com/taker/v3/market-makers"
-  - name: get_price_levels
-    description: Query indicative price levels across market makers for a pair/chain.
-    source_operation: "GET https://api.hashflow.com/taker/v3/price-levels"
-  - name: request_quote
-    description: Request signed, executable quotes (RFQ) from market makers.
-    source_operation: "POST https://api.hashflow.com/taker/v3/rfq"
-  - name: get_restrictions
-    description: Check whether a trader is rate-limit restricted.
-    source_operation: "GET https://api.hashflow.com/taker/v3/restrictions"
+- name: list_market_makers
+  description: List available market makers (liquidity providers) for a chain.
+  source_operation: GET https://api.hashflow.com/taker/v3/market-makers
+- name: get_price_levels
+  description: Query indicative price levels across market makers for a pair/chain.
+  source_operation: GET https://api.hashflow.com/taker/v3/price-levels
+- name: request_quote
+  description: Request signed, executable quotes (RFQ) from market makers.
+  source_operation: POST https://api.hashflow.com/taker/v3/rfq
+- name: get_restrictions
+  description: Check whether a trader is rate-limit restricted.
+  source_operation: GET https://api.hashflow.com/taker/v3/restrictions
+deployment:
+  mode: none
+  verified: derived
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census
