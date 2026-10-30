@@ -64,6 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hashflow is a company surfaced as a portfolio company of electric-capital and added to the API Evangelist network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the enrichment pipeline.
+Hashflow is a decentralized exchange (DEX) and the leading request-for-quote (RFQ) trading platform in crypto. Instead of an automated market maker (AMM) pricing curve, Hashflow brokers signed, off-chain-priced quotes from a network of professional market makers, giving traders zero-slippage, MEV-protected swaps across EVM chains and Solana, including cross-chain trades. Market makers publish price levels and respond to RFQs with EIP-712 signed quotes that settle on-chain via the HashflowRouter contract. Developers integrate through the Taker API v3 (market-makers, price-levels, rfq, and restrictions endpoints) and market-maker tooling, with first-party JavaScript and Python SDKs.
 
-Backed by: electric-capital — https://www.hashflow.com/
+**Areas:** Company · DeFi · Decentralized Exchange · RFQ · Trading · Cryptocurrency · Market Making · Cross-Chain · Blockchain · Web3
+
+## Hashflow on APIs.io
+
+Everything profiled for Hashflow is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hashflow/](https://apis.io/providers/hashflow/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Hashflow Taker API v3](https://apis.io/apis/hashflow/hashflow-taker-api-v3/) — REST API for takers/aggregators: discover market makers, query indicative price levels, request signed executable RFQ quotes, and check trader rate-limit…
+- [Hashflow Market Maker API v3](https://apis.io/apis/hashflow/hashflow-market-maker-api-v3/) — REST API for market makers: publish price levels, receive RFQs, sign quotes, and manage restrictions on the Hashflow exchange.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [hashflow](https://apis.io/servers/hashflow/hashflow/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Hashflow Authentication](https://apis.io/security/hashflow/hashflow-authentication/)
+- [Hashflow Domain Security](https://apis.io/security/hashflow/hashflow-domain-security/)
+- [Hashflow Vulnerability Disclosure](https://apis.io/security/hashflow/hashflow-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.hashflow.com/)
+- [Documentation](https://docs.hashflow.com/hashflow)
+- [Getting started](https://docs.hashflow.com/hashflow/taker/getting-started-api-v3)
+- [API reference](https://docs.hashflow.com/hashflow/taker/getting-started-api-v3)
+- [Pricing](https://docs.hashflow.com/hashflow/hashflow/protocol-fees-and-revenue-share)
+- [Sign up](https://app.hashflow.com/)
+- [Support](https://hashflow.com/discord)
+- [Blog](https://www.hashflow.com/blog/)
+- [Security](https://immunefi.com/bounty/hashflow/)
+- [GitHub](https://github.com/hashflownetwork)
+
+## API Evangelist rating
+
+**Kin Score 26.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 61.3 |
+| Access clarity | 23.7 |
+
+**Agent readiness 4.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.3** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hashflow/](https://apis.io/providers/hashflow/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hashflow: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hashflow/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
